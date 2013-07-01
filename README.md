@@ -24,11 +24,15 @@ We plan to expand upon this.
 
 ### Prepare Script
 
-A prep-script should run on a base SmartOS box. Todos in no particular order:
+A prep-script should run on a clean SmartOS box. This box could be created with another script based on a build available at [smartos.org](https://smartos.org). Todos in no particular order:
 
-- create a `vagrant` zone
+- create a `vagrant` zone, the image UUID(version) should be configurable
 - add nodejs packages to vagrant zone
 - assign global and vagrant zones to use DHCP
 - setup dns
-- `vagrant ssh` should reach the vagrant zone, not the global zone
+- `vagrant ssh` should reach the vagrant guest zone, not the global zone
+- the provisioning configuration in Vagrantfile should be reusable for deployment to SmartOS based hosting providers like Joyent
+
+Ideally this could be a [packer](http://www.packer.io/) template but not sure yet if it can manage all the tasks.
+
 
